@@ -1,0 +1,12 @@
+//base
+@import "base/_base.scss";
+@import "base/normalize", "base/reset", "base/typhography";
+// abstracts
+@import "abstacts/mixins", "abstacts/variables", "abstacts/classes";
+// Components
+@import "components/buttons", "components/cards", "components/theSameSections";
+// Layout
+@import "layout/footer", "layout/navbar", "layout/navbar"; // Darkmode
+@import "themes/dark-theme";
+// Vendors
+@import "vendors/owl-carousel";

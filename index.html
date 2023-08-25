@@ -1,667 +1,463 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width. initial-scale=1.0" />
-    <title>Северяночка</title>
-    <link rel="stylesheet" href="css/icons-font.css" />
-    <link rel="stylesheet" href="css/style-2.css" />
-    <link rel="stylesheet" href="css/style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Главная || Северяночка</title>
+    <link rel="stylesheet" href="css/home.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+      integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
+      integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="https://cdnjs.com/libraries/font-awesome" />
+    <link rel="stylesheet" href="InterCss/demo.css" />
+    <link rel="stylesheet" href="InterCss/intlTelInput.css" />
+    <link rel="stylesheet" href="css/popup.css" />
   </head>
+  <body>
+    <!-- Header Top Start-->
+    <header>
+      <div class="container">
+        <div class="header">
+          <div class="logotype">
+            <img src="Assets/icons/header__icon/Group.png" alt="" />
+            <a href="index.html">Северяночка</a>
+          </div>
+          <div class="catalog">
+            <img
+              class="hamburger"
+              src="Assets/icons/header__icon/menu.png"
+              alt=""
+            />
 
-  <body class="body">
-    <div class="wrapper">
-      <header class="header">
+            <a class="Text_S linksToCatalog" href="catalog.html">Каталог</a>
+          </div>
+          <div class="search">
+            <div class="InputContainer">
+              <input
+                type="text"
+                name="text"
+                class="input search__input"
+                id="input"
+                placeholder="Search"
+              />
+
+              <label for="input" class="labelforsearch">
+                <svg viewBox="0 0 512 512" class="searchIcon">
+                  <path
+                    d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"
+                  ></path>
+                </svg>
+              </label>
+              <div class="border"></div>
+
+              <button class="micButton">
+                <svg viewBox="0 0 384 512" class="micIcon">
+                  <path
+                    d="M192 0C139 0 96 43 96 96V256c0 53 43 96 96 96s96-43 96-96V96c0-53-43-96-96-96zM64 216c0-13.3-10.7-24-24-24s-24 10.7-24 24v40c0 89.1 66.2 162.7 152 174.4V464H120c-13.3 0-24 10.7-24 24s10.7 24 24 24h72 72c13.3 0 24-10.7 24-24s-10.7-24-24-24H216V430.4c85.8-11.7 152-85.3 152-174.4V216c0-13.3-10.7-24-24-24s-24 10.7-24 24v40c0 70.7-57.3 128-128 128s-128-57.3-128-128V216z"
+                  ></path>
+                </svg>
+              </button>
+            </div>
+          </div>
+          <div class="navigation">
+            <div class="nav">
+              <img src="Assets/icons/header__icon/like.svg" alt="" />
+              <h4>Избранное</h4>
+            </div>
+            <div class="nav">
+              <img src="Assets/icons/header__icon/box.svg" alt="" />
+              <h4>Продукты</h4>
+            </div>
+            <div class="nav">
+              <img src="Assets/icons/header__icon/basket.svg" alt="" />
+              <h4>Корзина</h4>
+            </div>
+          </div>
+          <div class="user">
+            <img src="Assets/icons/header__icon/avatar.png" alt="" />
+            <h3 class="open">Алексей</h3>
+            <img src="Assets/icons/header__icon/shape.png" alt="" />
+          </div>
+        </div>
+      </div>
+      <div class="popup">
+        <div class="modal-overlay">
+          <div class="modal">
+            <div class="popup__content">
+              <div class="popup__exit">
+                <p onclick="remove()">X</p>
+              </div>
+              <div class="popup__title">
+                <h1 class="Header_S">Вход</h1>
+              </div>
+              <div class="popup__input">
+                <form action="#">
+                  <input type="tel" id="phone" placeholder="Телефон" />
+                </form>
+              </div>
+              <div class="popup__btn">
+                <button class="Text_L">Вход</button>
+              </div>
+              <div class="popup__footer">
+                <div class="registration">
+                  <h3 class="Text_XS">Регистрация</h3>
+                </div>
+                <div class="password">
+                  <h3 class="Text_XS">Забыли пароль?</h3>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- Header Top End-->
+    <!-- Popup -->
+    <section>
+      <div class="wrapper">
         <div class="container">
-          <div class="header-wrapper">
-            <div class="header-logo">
-              <a href="index.html" class="link-logo">
-                <img
-                  src="img/logo.png"
-                  alt="Лого Серебряночка"
-                  class="logo-img"
-                />
-                <span class="header-logo__span">Северяночка</span>
-              </a>
+          <div class="Dropdown">
+            <div class="drops">
+              <a class="Text-Bold_S" href="#">Молоко, сыр, яйцо</a>
+              <a class="Text-Bold_S" href="#">Хлеб</a>
+              <a class="Text-Bold_S" href="#">Фрукты и овощи</a>
+              <a class="Text-Bold_S" href="#">Замороженные продукты</a>
             </div>
-            <div class="wrpper-catalog__button">
-              <a href="html/catalog.html" class="header-catalog__button">
-                <div class="header-catalog__icon"><span></span></div>
-                <span class="header-catalog__span">Каталог</span>
-              </a>
+            <div class="drops">
+              <a class="Text-Bold_S" href="#">Напитки</a>
+              <a class="Text-Bold_S" href="#">Кондитерские изделия</a>
+              <a class="Text-Bold_S" href="#">Чай, кофе</a>
             </div>
-            <div class="header-serch__block">
-              <form action="#" class="header-search">
-                <input
-                  id="header-input"
-                  type="text"
-                  name="search"
-                  class="header-search__input"
-                  placeholder="Найти товар"
-                />
-                <button
-                  for="header-input"
-                  class="_icon-search btn-search"
-                ></button>
-              </form>
-              <div class="search_result">
-                <ul class="search_list"></ul>
-                <a href="search-result.html" class="search-all"
-                  >Все результаты</a
-                >
-              </div>
+            <div class="drops">
+              <a class="Text-Bold_S" href="#">Бакалея</a>
+              <a class="Text-Bold_S" href="#">Здоровое питание</a>
+              <a class="Text-Bold_S" href="#">Зоотовары</a>
             </div>
-            <div class="header-menu__wrpper">
-              <div class="header-menu">
-                <a
-                  href="html/catalog.html"
-                  class="header-menu__item header-menu__catalog"
-                >
-                  <span class="icon icon-shape _icon-menu"></span>
-                  <span class="text">Каталог</span>
-                </a>
-                <a href="" class="header-menu__item header-menu__favourites">
-                  <span class="icon icon-menu _icon-shape">
-                    <span id="menu-favourites" class="cart-quantity">1</span>
-                  </span>
-                  <span class="text">Избраное</span>
-                </a>
-                <a
-                  href="orders.html"
-                  class="header-menu__item header-menu__orders"
-                >
-                  <span class="icon icon-menu _icon-orders">
-                    <span id="menu-orders" class="cart-quantity">1</span>
-                  </span>
-                  <span class="text">Заказы</span>
-                </a>
-                <a
-                  href="basket.html"
-                  class="header-menu__item header-menu__cart"
-                >
-                  <span class="icon icon-menu _icon-cart">
-                    <span id="menu-basket" class="cart-quantity">1</span>
-                  </span>
-                  <span class="text">Корзина</span>
-                </a>
-              </div>
-            </div>
-
-            <div class="header-profil">
-              <div class="profil-btn">
-                <img
-                  src="img/avatar.png"
-                  alt="Аватарка"
-                  class="profil-img profile-enter _icon-log-in"
-                />
-                <a
-                  href="#"
-                  class="header-profil__name _icon-arrow _icon-log-in profile-enter"
-                  >Алексей</a
-                >
-              </div>
+            <div class="drops">
+              <a class="Text-Bold_S" href="#">Непродовольственные товары</a>
+              <a class="Text-Bold_S" href="#">Детское питание</a>
+              <a class="Text-Bold_S" href="#">Мясо, птица, колбаса</a>
             </div>
           </div>
         </div>
-
-        <div class="header-catalog">
-          <div class="container">
-            <div class="header-catalog__wrapper">
-              <nav class="header-catalog__menu">
-                <ul class="header-catalog__list">
-                  <li class="header-catalog__item">
-                    <a href="" class="header-catalog__link"
-                      >Молоко. сыр. яйцо</a
-                    >
-                  </li>
-                  <li class="header-catalog__item">
-                    <a href="" class="header-catalog__link">Хлеб</a>
-                  </li>
-                  <li class="header-catalog__item">
-                    <a href="" class="header-catalog__link">Фрукты и овощи</a>
-                  </li>
-                  <li class="header-catalog__item">
-                    <a href="" class="header-catalog__link"
-                      >Замороженные продукты</a
-                    >
-                  </li>
-                </ul>
-                <ul class="header-catalog__list">
-                  <li class="header-catalog__item">
-                    <a href="" class="header-catalog__link">Напитки</a>
-                  </li>
-                  <li class="header-catalog__item">
-                    <a href="" class="header-catalog__link"
-                      >Кондитерские изделия</a
-                    >
-                  </li>
-                  <li class="header-catalog__item">
-                    <a href="" class="header-catalog__link">Чай. кофе</a>
-                  </li>
-                </ul>
-                <ul class="header-catalog__list">
-                  <li class="header-catalog__item">
-                    <a href="" class="header-catalog__link">Бакалея</a>
-                  </li>
-                  <li class="header-catalog__item">
-                    <a href="" class="header-catalog__link">Здоровое питание</a>
-                  </li>
-                  <li class="header-catalog__item">
-                    <a href="" class="header-catalog__link">Зоотовары</a>
-                  </li>
-                </ul>
-                <ul class="header-catalog__list">
-                  <li class="header-catalog__item">
-                    <a href="" class="header-catalog__link"
-                      >Непродовольственные товары</a
-                    >
-                  </li>
-                  <li class="header-catalog__item">
-                    <a href="" class="header-catalog__link">Детское питание</a>
-                  </li>
-                  <li class="header-catalog__item">
-                    <a href="" class="header-catalog__link"
-                      >Мясо. птица. колбаса</a
-                    >
-                  </li>
-                </ul>
-              </nav>
-            </div>
+      </div>
+    </section>
+    <!-- Popup -->
+    <!-- Header Footer Start -->
+    <div class="nav__footer">
+      <div class="container">
+        <div class="nav__item__footer">
+          <div class="nav__item">
+            <img src="Assets/icons/header__icon/footer__menu.png" alt="" />
+            <a class="Text_XS" href="#">Каталог</a>
+          </div>
+          <div class="nav__item">
+            <img src="Assets/icons/header__icon/like.png" alt="" />
+            <a class="Text_XS" href="#">Избранное</a>
+          </div>
+          <div class="nav__item">
+            <img src="Assets/icons/header__icon/box.png" alt="" />
+            <a class="Text_XS" href="#">Заказы</a>
+          </div>
+          <div class="nav__item">
+            <img src="Assets/icons/header__icon/basket.png" alt="" />
+            <a class="Text_XS" href="#">Корзина</a>
+          </div>
+          <div class="nav__item">
+            <img src="Assets/icons/header__icon/avatar.png" alt="" />
           </div>
         </div>
-      </header>
-
-      <main class="main">
-        <section class="shower">
-          <div class="container">
-            <h1>Доставка бесплатно от 1000 ₽</h1>
-          </div>
-        </section>
-        <div class="content">
-          <div class="container">
-            <div class="content-header">
-              <h2>Акции</h2>
-              <div class="all">
-                <span> Все акции </span>
-                <img src="images/right-ico.svg" />
-              </div>
-            </div>
-            <div class="content-cards">
-              <div class="card">
-                <div class="card-header">
-                  <img src="images/image.png" />
-                </div>
-                <div class="card-body">
-                  <div class="price">
-                    <span> 44,50 ₽ </span>
-                    <span> 50,50 ₽ </span>
-                  </div>
-                  <div class="type">
-                    <span> С картой </span>
-                    <span> Обычная </span>
-                  </div>
-                  <p class="description">Г/Ц Блинчики с мясом вес, Россия</p>
-                  <div class="rating">
-                    <img src="images/star-active.svg" />
-                    <img src="images/star-active.svg" />
-                    <img src="images/star-disabled.svg" />
-                    <img src="images/star-disabled.svg" />
-                    <img src="images/star-disabled.svg" />
-                  </div>
-
-                  <button>В корзину</button>
-                </div>
-              </div>
-              <div class="card">
-                <div class="card-header">
-                  <img src="images/image (1).png" />
-                </div>
-                <div class="card-body">
-                  <div class="price">
-                    <span> 44,50 ₽ </span>
-                    <span> 50,50 ₽ </span>
-                  </div>
-                  <div class="type">
-                    <span> С картой </span>
-                    <span> Обычная </span>
-                  </div>
-                  <p class="description">Г/Ц Блинчики с мясом вес, Россия</p>
-                  <div class="rating">
-                    <img src="images/star-active.svg" />
-                    <img src="images/star-active.svg" />
-                    <img src="images/star-disabled.svg" />
-                    <img src="images/star-disabled.svg" />
-                    <img src="images/star-disabled.svg" />
-                  </div>
-
-                  <button>В корзину</button>
-                </div>
-              </div>
-              <div class="card active">
-                <div class="card-header">
-                  <img src="images/image (2).png" />
-                </div>
-                <div class="card-body">
-                  <div class="price">
-                    <span> 44,50 ₽ </span>
-                    <span> 50,50 ₽ </span>
-                  </div>
-                  <div class="type">
-                    <span> С картой </span>
-                    <span> Обычная </span>
-                  </div>
-                  <p class="description">Г/Ц Блинчики с мясом вес, Россия</p>
-                  <div class="rating">
-                    <img src="images/star-active.svg" />
-                    <img src="images/star-active.svg" />
-                    <img src="images/star-disabled.svg" />
-                    <img src="images/star-disabled.svg" />
-                    <img src="images/star-disabled.svg" />
-                  </div>
-
-                  <button>В корзину</button>
-                </div>
-              </div>
-              <div class="card">
-                <div class="card-header">
-                  <img src="images/image (2).png" />
-                </div>
-                <div class="card-body">
-                  <div class="price">
-                    <span> 44,50 ₽ </span>
-                    <span> 50,50 ₽ </span>
-                  </div>
-                  <div class="type">
-                    <span> С картой </span>
-                    <span> Обычная </span>
-                  </div>
-                  <p class="description">Г/Ц Блинчики с мясом вес, Россия</p>
-                  <div class="rating">
-                    <img src="images/star-active.svg" />
-                    <img src="images/star-active.svg" />
-                    <img src="images/star-disabled.svg" />
-                    <img src="images/star-disabled.svg" />
-                    <img src="images/star-disabled.svg" />
-                  </div>
-
-                  <button>В корзину</button>
-                </div>
-              </div>
-            </div>
-
-            <div class="content-header">
-              <h2>Новинки</h2>
-              <div class="all">
-                <span> Все новинки </span>
-                <img src="images/right-ico.svg" />
-              </div>
-            </div>
-            <div class="content-cards news">
-              <div class="card">
-                <div class="card-header">
-                  <img src="images/image (3).png" />
-                </div>
-                <div class="card-body">
-                  <div class="price">
-                    <span> 599,99 ₽ </span>
-                  </div>
-
-                  <p class="description">
-                    Комбайн КЗС-1218 «ДЕСНА-ПОЛЕСЬЕ GS12»
-                  </p>
-                  <div class="rating">
-                    <img src="images/star-active.svg" />
-                    <img src="images/star-active.svg" />
-                    <img src="images/star-disabled.svg" />
-                    <img src="images/star-disabled.svg" />
-                    <img src="images/star-disabled.svg" />
-                  </div>
-
-                  <button>В корзину</button>
-                </div>
-              </div>
-
-              <div class="card active">
-                <div class="card-header">
-                  <img src="images/image (2).png" />
-                </div>
-                <div class="card-body">
-                  <div class="price">
-                    <span> 44,50 ₽ </span>
-                  </div>
-
-                  <p class="description">
-                    Колбаса сырокопченая МЯСНАЯ ИСТОРИЯ Сальчичон и Тоскан...
-                  </p>
-                  <div class="rating">
-                    <img src="images/star-active.svg" />
-                    <img src="images/star-active.svg" />
-                    <img src="images/star-disabled.svg" />
-                    <img src="images/star-disabled.svg" />
-                    <img src="images/star-disabled.svg" />
-                  </div>
-
-                  <button>В корзину</button>
-                </div>
-              </div>
-
-              <div class="card">
-                <div class="card-header">
-                  <img src="images/image (2).png" />
-                </div>
-                <div class="card-body">
-                  <div class="price">
-                    <span> 159,99 ₽ </span>
-                  </div>
-
-                  <p class="description">
-                    Комбайн КЗС-1218 «ДЕСНА-ПОЛЕСЬЕ GS12»
-                  </p>
-                  <div class="rating">
-                    <img src="images/star-active.svg" />
-                    <img src="images/star-active.svg" />
-                    <img src="images/star-disabled.svg" />
-                    <img src="images/star-disabled.svg" />
-                    <img src="images/star-disabled.svg" />
-                  </div>
-
-                  <button>В корзину</button>
-                </div>
-              </div>
-
-              <div class="card">
-                <div class="card-header">
-                  <img src="images/image (1).png" />
-                </div>
-                <div class="card-body">
-                  <div class="price">
-                    <span> 49,39 ₽ </span>
-                  </div>
-
-                  <p class="description">
-                    Комбайн КЗС-1218 «ДЕСНА-ПОЛЕСЬЕ GS12»
-                  </p>
-                  <div class="rating">
-                    <img src="images/star-active.svg" />
-                    <img src="images/star-active.svg" />
-                    <img src="images/star-disabled.svg" />
-                    <img src="images/star-disabled.svg" />
-                    <img src="images/star-disabled.svg" />
-                  </div>
-
-                  <button>В корзину</button>
-                </div>
-              </div>
-            </div>
-
-            <div class="content-header">
-              <h2>Покупали раньше</h2>
-              <div class="all">
-                <span> Все покупки </span>
-                <img src="images/right-ico.svg" />
-              </div>
-            </div>
-            <div class="content-cards news">
-              <div class="card">
-                <div class="card-header">
-                  <img src="images/image (4).png" />
-                </div>
-                <div class="card-body">
-                  <div class="price">
-                    <span> 77,99 ₽ </span>
-                  </div>
-
-                  <p class="description">
-                    Комбайн КЗС-1218 «ДЕСНА-ПОЛЕСЬЕ GS12»
-                  </p>
-                  <div class="rating">
-                    <img src="images/star-active.svg" />
-                    <img src="images/star-active.svg" />
-                    <img src="images/star-disabled.svg" />
-                    <img src="images/star-disabled.svg" />
-                    <img src="images/star-disabled.svg" />
-                  </div>
-
-                  <button>В корзину</button>
-                </div>
-              </div>
-
-              <div class="card active"> 
-                <div class="card-header">
-                  <img src="images/image (2).png" />
-                </div>
-                <div class="card-body">
-                  <div class="price">
-                    <span> 44,50 ₽ </span>
-                  </div>
-
-                  <p class="description">
-                    Колбаса сырокопченая МЯСНАЯ ИСТОРИЯ Сальчичон и Тоскан...
-                  </p>
-                  <div class="rating">
-                    <img src="images/star-active.svg" />
-                    <img src="images/star-active.svg" />
-                    <img src="images/star-disabled.svg" />
-                    <img src="images/star-disabled.svg" />
-                    <img src="images/star-disabled.svg" />
-                  </div>
-
-                  <button>В корзину</button>
-                </div>
-              </div>
-
-              <div class="card">
-                <div class="card-header">
-                  <img src="images/image (2).png" />
-                </div>
-                <div class="card-body">
-                  <div class="price">
-                    <span> 159,99 ₽ </span>
-                  </div>
-
-                  <p class="description">
-                    Комбайн КЗС-1218 «ДЕСНА-ПОЛЕСЬЕ GS12»
-                  </p>
-                  <div class="rating">
-                    <img src="images/star-active.svg" />
-                    <img src="images/star-active.svg" />
-                    <img src="images/star-disabled.svg" />
-                    <img src="images/star-disabled.svg" />
-                    <img src="images/star-disabled.svg" />
-                  </div>
-
-                  <button>В корзину</button>
-                </div>
-              </div>
-
-              <div class="card">
-                <div class="card-header">
-                  <img src="images/image (1).png" />
-                </div>
-                <div class="card-body">
-                  <div class="price">
-                    <span> 49,39 ₽ </span>
-                  </div>
-
-                  <p class="description">
-                    Комбайн КЗС-1218 «ДЕСНА-ПОЛЕСЬЕ GS12»
-                  </p>
-                  <div class="rating">
-                    <img src="images/star-active.svg" />
-                    <img src="images/star-active.svg" />
-                    <img src="images/star-disabled.svg" />
-                    <img src="images/star-disabled.svg" />
-                    <img src="images/star-disabled.svg" />
-                  </div>
-
-                  <button>В корзину</button>
-                </div>
-              </div>
-            </div>
-
-            <section class="offers">
-              <h2>Специальные предложения</h2>
-              <section class="banners">
-                <div class="banner">
-                  <div class="content-banner">
-                    <h1>Оформите карту «Северяночка»</h1>
-                    <p>И получайте бонусы при покупке в магазинах и на сайте</p>
-                  </div>
-                </div>
-                <div class="banner">
-                  <div class="content-banner">
-                    <h1>Покупайте акционные товары</h1>
-                    <p>И получайте вдвое больше бонусов</p>
-                  </div>
-                </div>
-              </section>
-            </section>
-
-            <section class="location-section">
-              <h2>Наши магазины</h2>
-              <div class="map">
-                <div class="map-menu">
-                  <button class="active">п.Щельяюр</button>
-                  <button>д.Вертеп</button>
-                  <button>с.Краснобор</button>
-                  <button>д.Диюр</button>
-                </div>
-                <div class="map-section">
-                  <img src="images/map.png" alt="Map is here" />
-                </div>
-              </div>
-            </section>
-
-            <article class="articles">
-              <div class="content-header">
-                <h2>Статьи</h2>
-                <div class="all">
-                  <span> Все покупки </span>
-                  <img src="images/right-ico.svg" />
-                </div>
-              </div>
-              <div class="articles-section">
-                <div class="article">
-                  <div class="article-header">
-                    <img src="images/image (5).png" />
-                  </div>
-
-                  <span class="date"> 05.03.2021 </span>
-                  <h1>
-                    Режим использования масок и перчаток на территории магазинов
-                  </h1>
-                  <p>
-                    Подробная информация о режимах использования масок и
-                    перчаток на территории магазинов "ЛЕНТА". Информация
-                    обновляется каждый будний день.
-                  </p>
-                  <button>Подробнее</button>
-                </div>
-                <div class="article">
-                  <div class="article-header">
-                    <img src="images/image (6).png" />
-                  </div>
-
-                  <span class="date"> 05.03.2021 </span>
-                  <h1>Весеннее настроение для каждой</h1>
-                  <p>
-                    8 Марта – это не просто Международный женский день, это ещё
-                    день тюльпанов, приятных сюрпризов и праздничных тёплых
-                    пожеланий.
-                  </p>
-                  <button class="active">Подробнее</button>
-                </div>
-                <div class="article">
-                  <div class="article-header">
-                    <img src="images/image (7).png" />
-                  </div>
-
-                  <span class="date"> 22.02.2020 </span>
-                  <h1>ЗОЖ или ФАСТФУД. А вы на чьей стороне? Голосуем!</h1>
-                  <p>
-                    Голосуйте за любимые категории, выбирайте
-                    категорию-победителя в мобильном приложении и получайте
-                    кешбэк 10% баллами в апреле!
-                  </p>
-                  <button>Подробнее</button>
-                </div>
-              </div>
-            </article>
-          </div>
-        </div>
-      </main>
-
-      <footer class="footer">
-        <div class="container">
-          <div class="footer__content">
-            <nav class="footer__menu">
-              <a href="index.html" class="footer__logo-link"
-                ><img src="img/logo-footer.png" alt="" class="footer__logo"
-              /></a>
-              <ul class="footer__menu-list">
-                <li class="footer__menu-item">
-                  <a href="about.html" class="footer__menu-link">О компании</a>
-                </li>
-                <li class="footer__menu-item">
-                  <a href="contacts.html" class="footer__menu-link">Контакты</a>
-                </li>
-                <li class="footer__menu-item">
-                  <a href="openings.html" class="footer__menu-link">Вакансии</a>
-                </li>
-                <li class="footer__menu-item">
-                  <a href="articles.html" class="footer__menu-link">Статьи</a>
-                </li>
-                <li class="footer__menu-item">
-                  <a href="personal-date.html" class="footer__menu-link"
-                    >Политика обработки персональных данных</a
-                  >
-                </li>
-              </ul>
-            </nav>
-            <nav class="footer__contact">
-              <ul class="footer__contact-list">
-                <li class="footer__contact-item">
-                  <a href="" class="footer__contact-link"
-                    ><img src="img/svg/instagram.svg" alt=""
-                  /></a>
-                </li>
-                <li class="footer__contact-item">
-                  <a href="" class="footer__contact-link"
-                    ><img src="img/svg/vk.svg" alt=""
-                  /></a>
-                </li>
-                <li class="footer__contact-item">
-                  <a href="" class="footer__contact-link"
-                    ><img src="img/svg/facebook.svg" alt=""
-                  /></a>
-                </li>
-                <li class="footer__contact-item">
-                  <a href="" class="footer__contact-link"
-                    ><img src="img/svg/odnaklasshiki.svg" alt=""
-                  /></a>
-                </li>
-              </ul>
-              <a href="tel:+998917742477" class="footer__contact-tel _icon-phone"
-                >+998917742477</a
-              >
-            </nav>
-          </div>
-        </div>
-      </footer>
-
-      <div class="menu-fixed"></div>
-
-      <div class="btn-up">↑</div>
+      </div>
     </div>
+    <!-- Header Footer End -->
+    <!-- Main -->
+    <main>
+      <!-- Banner Section -->
+      <section id="delivery">
+        <div class="container">
+          <div class="banner">
+            <img src="Assets/images/home/head_basket.png" alt="" />
+            <h1 class="Header_L">Доставка бесплатно от 1000 ₽</h1>
+          </div>
+        </div>
+      </section>
+      <!-- Banner Section -->
+      <!-- Promotion Section -->
+      <section id="promotion">
+        <div class="container">
+          <div class="promotion">
+            <div class="promotion__title">
+              <h1 class="Header_M">Акция</h1>
+              <div class="promotion__link">
+                <a class="Text_S" href="all_products.html">Все Продукты</a>
+                <img src="Assets/icons/header__icon/shape__next.png" alt="" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Promotion Section -->
+      <!-- Promotion Second Section -->
+      <section id="promotion-card">
+        <div class="container">
+          <div id="root" class="promotion__box owl-carousel owl-theme"></div>
+        </div>
+      </section>
+      <!-- Promotion Second Section -->
+      <!-- New -->
+      <section id="new">
+        <div class="container">
+          <div class="new">
+            <div class="new__title">
+              <h1 class="Header_M">Новинки</h1>
+              <div class="new__link">
+                <a class="Text_S" href="all_products.html">Все Продукты</a>
+                <img src="Assets/icons/header__icon/shape__next.png" alt="" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- New -->
+      <!-- New Second Section -->
+      <section id="new-card">
+        <div class="container">
+          <div id="newsCards" class="new__box owl-carousel owl-theme"></div>
+        </div>
+      </section>
+      <!-- New Second Section -->
+      <!-- Popular Section -->
+      <section id="new">
+        <div class="container">
+          <div class="new">
+            <div class="new__title">
+              <h1 class="Header_M">Покупали раньше</h1>
+              <div class="new__link">
+                <a class="Text_S" href="all_products.html">Все Продукты</a>
+                <img src="Assets/icons/header__icon/shape__next.png" alt="" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Popular Section -->
+      <!-- Popular Second Section -->
+      <section id="new-card">
+        <div class="container">
+          <div id="before" class="new__box owl-carousel owl-theme"></div>
+        </div>
+      </section>
+      <!-- Popular Second Section -->
+      <!-- Special offers  -->
+      <section id="new">
+        <div class="container">
+          <div class="new">
+            <div class="new__title">
+              <h1 class="Header_M">Специальные предложения</h1>
+              <div class="new__link">
+                <a class="Text_S" href="all_products.html">Все Продукты</a>
+                <img src="Assets/icons/header__icon/shape__next.png" alt="" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Special offers  -->
+      <!-- Special offers second section -->
+      <section id="special-offers">
+        <div class="container">
+          <div id="special" class="special__offers"></div>
+        </div>
+      </section>
+      <!-- Special offers second section -->
+      <!-- Our Stores Section -->
+      <section id="Our_Stores">
+        <div class="container">
+          <div class="our__stores">
+            <div class="our__stores__title">
+              <h1 class="Header_M">Наши магазины</h1>
+            </div>
+            <div class="our__stores__ap__tab">
+              <div class="ap-tab">
+                <ul class="ap-tab-list aplist_custom">
+                  <li class="ap-tab-item aplist">
+                    <a class="Text_XS ap-tab-link" href="#">п.Щельяюр</a>
+                  </li>
+                  <li class="ap-tab-item aplist">
+                    <a class="Text_XS ap-tab-link" href="#">д.Вертеп</a>
+                  </li>
+                  <li class="ap-tab-item aplist">
+                    <a class="Text_XS ap-tab-link" href="#">с.Краснобор</a>
+                  </li>
+                  <li class="ap-tab-item aplist">
+                    <a class="Text_XS ap-tab-link" href="#">д.Диюр</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="ap-tab-container iframe">
+                <div class="ap-tab-content">
+                  <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d344529.99416765664!2d-82.79533728408342!3d30.301651045911445!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88c1766591562abf%3A0xf72e13d35bc74ed0!2z0KTQu9C-0YDQuNC00LAsINCh0KjQkA!5e0!3m2!1sru!2s!4v1684939994950!5m2!1sru!2s"
+                    width="1208px"
+                    height="354"
+                    style="border: 0"
+                    allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"
+                  ></iframe>
+                </div>
+                <div class="ap-tab-content">
+                  <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d112606.34435826035!2d-80.73995675507672!3d28.11760728097195!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88de0e2c4771994d%3A0x8bcdb254a90cd2a8!2z0JzQtdC70LHQvtGA0L0sINCk0LvQvtGA0LjQtNCwLCDQodCo0JA!5e0!3m2!1sru!2s!4v1684940027362!5m2!1sru!2s"
+                    width="1208"
+                    height="354"
+                    style="border: 0"
+                    allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"
+                  ></iframe>
+                </div>
+                <div class="ap-tab-content">
+                  <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d26547066.95289777!2d-117.01345829883516!3d35.686634388524006!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54eab584e432360b%3A0x1c3bb99243deb742!2z0KHQvtC10LTQuNC90LXQvdC90YvQtSDQqNGC0LDRgtGLINCQ0LzQtdGA0LjQutC4!5e0!3m2!1sru!2s!4v1684940051370!5m2!1sru!2s"
+                    width="1208"
+                    height="354"
+                    style="border: 0"
+                    allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"
+                  ></iframe>
+                </div>
+                <div class="ap-tab-content">
+                  <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d412505.92982412764!2d-115.50466052147772!3d36.12510312764242!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80beb782a4f57dd1%3A0x3accd5e6d5b379a3!2z0JvQsNGBLdCS0LXQs9Cw0YEsINCd0LXQstCw0LTQsCwg0KHQqNCQ!5e0!3m2!1sru!2s!4v1684940070301!5m2!1sru!2s"
+                    width="1208"
+                    height="354"
+                    style="border: 0"
+                    allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"
+                  ></iframe>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Our Stores Section -->
+      <!-- Articles Section -->
+      <section id="new">
+        <div class="container">
+          <div class="new">
+            <div class="new__title">
+              <h1 class="Header_M">Статьи</h1>
+              <div class="new__link">
+                <a class="Text_S" href="all_products.html">Все Продукты</a>
+                <img src="Assets/icons/header__icon/shape__next.png" alt="" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Articles Section -->
+      <!-- Articles Second Section -->
+      <section id="articles">
+        <div class="container">
+          <div id="article" class="articles"></div>
+        </div>
+      </section>
+      <!-- Articles Second Section -->
+    </main>
+    <!-- Main -->
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div class="footer">
+          <div class="logotype__nav">
+            <img src="Assets/icons/Logo/footer-logo.png" alt="" />
+            <ul>
+              <li class="nav__items">
+                <a class="Text_XS" href="#">О компании</a>
+              </li>
+              <li class="nav__items">
+                <a class="Text_XS" href="#">Контакты</a>
+              </li>
+              <li class="nav__items">
+                <a class="Text_XS" href="#">Вакансии</a>
+              </li>
+              <li class="nav__items"><a class="Text_XS" href="#">Статьи</a></li>
+              <li class="nav__items">
+                <a class="Text_XS" href="#"
+                  >Политика обработки персональных данных</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="logotype__social">
+            <div class="social__logo">
+              <a href="#"
+                ><img src="Assets/icons/social/instagram.png" alt=""
+              /></a>
+              <a href="#"><img src="Assets/icons/social/vk.png" alt="" /></a>
+              <a href="#"
+                ><img src="Assets/icons/social/facebook.png" alt=""
+              /></a>
+              <a href="#"><img src="Assets/icons/social/ok.png" alt="" /></a>
+            </div>
+            <div class="number">
+              <img src="Assets/icons/Logo/phone.svg" alt="" />
+              <a class="Text_S" href="tel:+99890-007-49-50">+99890-007-49-50</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- Footer -->
+    <!-- Javascript Links -->
+    <script src="https://cdn.jsdelivr.net/gh/abdulazizcreator/ap-tab/main.js"></script>
     <script
-      src="https://api-maps.yandex.ru/2.1/?apikey=b756749a-c9d8-4f04-a6c7-2653f5d9d0b7&lang=ru_RU"
-      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"
+      integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
     ></script>
-    <!-- b756749a-c9d8-4f04-a6c7-2653f5d9d0b7 -->
-    <script src="js/profile.js" type="module"></script>
-    <script src="libs/Swiper/swiper-bundle.min.js"></script>
-    <script src="js/map.js"></script>
-    <script src="js/main.js" type="module"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
+      integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+    <script src="JavaScript/homePageArray.js"></script>
+    <script src="JavaScript/dropdown.js"></script>
+    <script src="JavaScript/owl_carousel.js"></script>
+    <!-- Javascript Links -->
+    <!-- InterTelJS -->
+    <script src="JavaScript/intlTelInput.js"></script>
+    <script>
+      var input = document.querySelector("#phone");
+      window.intlTelInput(input, {});
+    </script>
+    <!-- InterTelJS -->
+    <script src="JavaScript/Popup.js"></script>
   </body>
 </html>
